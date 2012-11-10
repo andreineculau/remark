@@ -12,12 +12,8 @@ describe('API', function () {
       dom.exports.should.have.property('remark', api);
     });
 
-    it('should trigger ready event', function (done) {
-      api.on('ready', function () {
-        done();
-      });
-
-      dom.emit('load');
+    it('should expose .ready', function () {
+      dom.exports.should.have.property('ready', api.remark);
     });
   });
 });

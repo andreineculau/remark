@@ -7,11 +7,12 @@ var utils = require('./remark/utils')
   , Slideshow = require('./remark/models/slideshow').Slideshow
   , SlideshowView = require('./remark/views/slideshowView').SlideshowView
   , resources = require('./remark/resources')
+  , ready
   ;
 
 dom.exports.remark = api;
 
-dom.on('load', function () {
+api.ready = function () {
   var sourceElement = dom.getElementById('source')
     , slideshowElement = dom.getElementById('slideshow')
     ;
@@ -26,7 +27,7 @@ dom.on('load', function () {
   setupSlideshow(sourceElement, slideshowElement);
 
   api.emit('ready');
-});
+};
 
 function assureElementsExist (sourceElement, slideshowElement) {
   if (!sourceElement) {
