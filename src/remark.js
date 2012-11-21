@@ -29,6 +29,19 @@ api.ready = function () {
   api.emit('ready');
 };
 
+api.gotoSlide = function(slideNoOrName) {
+  dispatcher.emit('gotoSlide', slideNoOrName);
+};
+
+api.gotoNextSlide = function() {
+  dispatcher.emit('gotoNextSlide');
+};
+
+api.gotoPreviousSlide = function() {
+  dispatcher.emit('gotoPreviousSlide');
+};
+
+
 function assureElementsExist (sourceElement, slideshowElement) {
   if (!sourceElement) {
     dom.alert('remark error: source element not present.');
