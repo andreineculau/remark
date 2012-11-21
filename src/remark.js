@@ -41,6 +41,8 @@ api.gotoPreviousSlide = function() {
   dispatcher.emit('gotoPreviousSlide');
 };
 
+api.dispatcher = dispatcher;
+
 
 function assureElementsExist (sourceElement, slideshowElement) {
   if (!sourceElement) {
